@@ -56,7 +56,7 @@ address:
   - line: Bagsewania Bhopal, 462043
 
 # Credits content
-credits: 'MAG Homeo and Herbal Remedies is a company and an initative started by Dr. Manish Goyal to deliver the best homeopathic treatment and medicines that one can get'
+credits: ''
 
 # Build settings
 markdown: kramdown
