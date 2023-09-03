@@ -1,8 +1,8 @@
 ---
 layout: default
 modal-id: 1
-date: 2014-07-18
-img: cabin.png
+date: 2023-09-03
+img: MAG1.jpeg
 alt: image-alt
 project-date: April 2014
 client: Start Bootstrap
