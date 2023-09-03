@@ -1,8 +1,8 @@
 ---
 layout: default
 modal-id: 3
-date: 2014-07-16
-img: circus.png
+date: 2023-09-03
+img: MAG3.jpeg
 alt: image-alt
 project-date: April 2014
 client: Start Bootstrap
