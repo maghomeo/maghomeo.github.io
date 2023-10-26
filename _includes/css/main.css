@@ -187,10 +187,10 @@ section.success {
 
 /* Style for the two sections */
 .section_slides {
-    width: 50%;
+    width: 60%;
     float: left;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
 }
 
  /* Style for the slideshow container */
