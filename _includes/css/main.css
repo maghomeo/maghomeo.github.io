@@ -225,14 +225,15 @@ section.success {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 350px;  /*product item size*/
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
     position: absolute;
+    /*hover color's height and width coverage percent*/
     width: 100%;
     height: 100%;
-    opacity: 0;
+    opacity: 0; /*initial opacity of hover color*/
     background: rgba({{ site.color.primary-rgb }},.9);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
@@ -240,7 +241,7 @@ section.success {
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
-    opacity: 1;
+    opacity: 0.8; /*Hover color intensity*/
 }
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content {
@@ -293,12 +294,12 @@ section.success {
     }
   }
   /* A large grid might need four columns on widescreen layouts */
-  /* @media (min-width: 1380px) {
+   @media (min-width: 1380px) {
     .portfolio-flex-grid .portfolio-flex-row .portfolio-flex-item {
       flex: 1 0 23.5%;
       max-width: 23.5%;
     }
-  } */
+  }
 
 .btn-outline {
     margin-top: 15px;
