@@ -49,7 +49,7 @@ hr.star-primary {
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\f005";
+    content: "\f005"; /* FontAwesome Unicode's star this is where it comes from */
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -85,6 +85,7 @@ header {
     color: #fff;
     background: #{{ site.color.primary }};
 }
+
 /*green region*/
 header .container {
     padding-top: 80px;
@@ -111,17 +112,24 @@ header .intro-text .skills {
 
 @media(min-width:768px) {
     header .container {
-        padding-top: 150px;
+        padding-top: 160px; /*margin from top (btw image and navigation bar)*/
         padding-bottom: 30px;
     }
 
     header .intro-text .name {
-        font-size: 3em;
+        font-size: 2.5em; /*Main name size*/
     }
 
     header .intro-text .skills {
-        font-size: 1.5em;
+        font-size: 1.25em;
     }
+
+    .img-response {
+    width: 20%; /* Main Image Size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
 }
 
 @media(min-width:768px) {
@@ -171,6 +179,26 @@ header .intro-text .skills {
     border: 0;
 }
 
+/* Open the dropdown menu on hover */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Adds a dropdown animation */
+.navbar .dropdown .dropdown-menu {
+    transition: all 0.2s ease-out;
+    transform: translateY(-10px);
+    opacity: 0;
+    display: block;
+    visibility: hidden;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
 section {
     padding: 99px 0;
 }
@@ -197,7 +225,7 @@ section.success {
     .slideshow-container {
         position: relative;
         max-width: 100%;
-        margin: auto;
+        margin: auto;  
     }
 
  /* Style for the slideshow images */
@@ -205,6 +233,28 @@ section.success {
         display: none;
         max-width: 100%;
     }
+ /* Add a border to the right side of the left section */
+    .text-section {
+        border-right: 1px solid #ddd; /* Adjust color and width as needed */
+    }
+ /* Add a border to the bottom of the parent container */
+    .flex-container {
+        border-bottom: 1px solid #ddd; /* Adjust color and width as needed */
+}
+
+/* Style for the rectangles */
+.dot {
+    height: 5px;
+    width: 20px;
+    margin: 0 1.5px;
+    background-color: #bbb;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active {
+    background-color: #717171;
+  }
 
 @media(max-width:767px) {
     section {
@@ -310,6 +360,45 @@ section.success {
     transition: all .3s ease-in-out;
 }
 
+
+
+
+/* PORTFOLIO GRID CUSTOMISATION */
+
+/* Add a hover effect to the portfolio items */
+.portfolio-item:hover {
+    transform: scale(1.05);
+    transition: transform .3s;
+  }
+  
+  /* Add a box shadow to the portfolio items */
+  .portfolio-item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    border-radius: 15px; /* Adjust as needed */
+    overflow: hidden; /* Add this line */
+  }
+  
+  /* Increase the size of the search icon on hover */
+  .portfolio-item:hover .fa-search-plus {
+    transform: scale(1.5);
+    transition: transform .2s;
+  }
+
+
+  .portfolio-item {
+    border: 1px solid #ddd; /* Add a border */
+    background-color: #f9f9f9; /* Change the background color */
+    color: #333; /* Change the color of the text */
+  }
+  
+  /* Change the color of the border and text on hover */
+  .portfolio-item:hover {
+    border-color: #333;
+    color: #555;
+  }
+
+  
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
@@ -446,6 +535,7 @@ footer .footer-below {
     box-shadow: none;
 }
 
+
 .portfolio-modal .modal-content h2 {
     margin: 0;
     font-size: 3em;
@@ -453,6 +543,32 @@ footer .footer-below {
 
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
+}
+/*
+.portfolio-modal .modal-body .img-responsive {
+    width: 50%; /* image size 
+    height: auto; /* Maintain aspect ratio 
+}*/
+
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-right: 5px;
+    /*background: #FF0000;*/
+}
+
+.modal-image {
+    width: 50%;
+    height: auto;
+    flex: 1;
+    /*background: yellow;*/
+}
+
+.modal-text {
+    flex: 5;
+    /*background: green*/
 }
 
 .portfolio-modal .modal-content .item-details {

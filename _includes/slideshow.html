@@ -3,9 +3,8 @@
 <head>
     <style>
         /* Style for the two sections */
-        .section_slides {
-            width: 40%;
-            float: left;
+        .section {
+            width: 50%;
             box-sizing: border-box;
             padding: 2px;
             height: 450px; /* Adjust this value to set the desired height for sections */
@@ -16,57 +15,66 @@
             position: relative;
             max-width: 100%;
             margin: auto;
-            /*height: 100%; /* Match the height to the sections */
         }
 
         /* Style for the slideshow images */
         .mySlides {
             display: none;
-            max-width: 100%;
-            /*height: 100%; /* Match the height to the slideshow container */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style for the text section */
+        .text-section {
+            padding: 20px;
+        }
+
+        /* Flex container */
+        .flex-container {
+            display: flex;
         }
     </style>
 </head>
 <body>
-    <div class="section_slides">
-        <h2>Section 1</h2>
-        <p>This is the first section. text/any photo/ about company/ offers??///text/any photo/ about company/ offers??////text/any photo/ about company/ offers??</p>
-    </div>
-    <div class="section_slides">
-        <div class="slideshow-container">
-            <div class="mySlides">
-                <img src="img/thereareonly_editt.jpg" alt="Image 1">
-            </div>
-            <div class="mySlides">
-                <img src="img/stock1.jpg" alt="Image 2">
-            </div>
-            <div class="mySlides">
-                <img src="img/stock2.jpg" alt="Image 3">
-            </div>
+    <div class="flex-container">
+        <div class="section text-section">
+            <h1>Title</h1>
+            <p>Some text...</p>
+        </div>
+        <div class="section slideshow-container">
+            <img class="mySlides" src="img/thereareonly_editt.jpg" style="width:100%">
+            <img class="mySlides" src="img/stock1.jpg" style="width:100%">
+            <img class="mySlides" src="img/stock2.jpg" style="width:100%">
+
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+              </div>
+
         </div>
     </div>
 
     <script>
-        // JavaScript for the slideshow (you can use a library like jQuery or pure JavaScript)
-        let slideIndex = 0;
-        showSlides();
+var slideIndex = 0;
+showSlides();
 
-        function showSlides() {
-            let i;
-            const slides = document.querySelectorAll(".mySlides");
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds (you can adjust this)
-        }
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
     </script>
 </body>
 </html>

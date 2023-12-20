@@ -1,0 +1,71 @@
+
+<html>
+    <!--<nav class="navbar navbar-default navbar-fixed-top">-->
+<header>
+<style>
+
+#blue-region {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 18vh;
+    background-color: blue;
+    /* Hide the blue region initially */
+    opacity: 0;
+    visibility: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slide-down 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#blue-region p {
+    margin-top: 120px; /* Adjust as needed */
+}
+
+
+@keyframes slide-down {
+    from {
+        top: -100vh;
+    }
+    to {
+        top: 0;
+    }
+}
+
+#blue-region {
+    animation: slide-down 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+
+#blue-region.visible {
+    opacity: 1;
+    visibility: visible;
+}
+</style>
+<script>
+    window.onload = function() {
+        var blueRegion = document.getElementById('blue-region');
+        blueRegion.classList.add('visible');
+    
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) { // adjust this value as needed
+                blueRegion.classList.remove('visible');
+            } else {
+                blueRegion.classList.add('visible');
+            }
+        });
+    };
+    </script>
+</header>
+<body>
+<div id="blue-region">
+    <p>Flat 20% off + free shipment on your first order. Click Here</p>
+</div>
+</body>
+<!--</nav>-->
+</html>
