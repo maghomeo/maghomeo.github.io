@@ -1,8 +1,9 @@
 ---
+featured: true
 layout: default
-modal-id: 2
+modal-id: 5
 date: 2023-09-03
-img: MAG2.jpeg
+img: MAG5.jpeg
 alt: image-alt
 project-date: April 2014
 client: Start Bootstrap

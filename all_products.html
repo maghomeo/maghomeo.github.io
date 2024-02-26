@@ -1,25 +1,28 @@
+---
+permalink: /all_products.html
+---
 <html>
 <head>
     <link rel="stylesheet" href=" style.css">
     <link rel="stylesheet" href=" css/font-awesome/css/all.min.css">
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <style>
+
+
+    </style>
 </head>
   <body>
-    <div class="container">
-      <input type="text" id="search" placeholder="Search products...">
-      <div id="results"></div>
-  </div>
       <section id="portfolio">
           <div class="container portfolio-flex-grid">
             <div class="row">
-              <div class="col-lg-12 text-center">
+              <!--<div class="col-lg-12 text-center">
                 <h2>Bestselling Products</h2>
                 <hr class="star-primary">
-              </div>
+              </div>-->
             </div>
             <div class="portfolio-flex-row">
-              <!--{% for post in site.posts %}-->
+              {% for post in site.posts %}
               <div class="portfolio-flex-item portfolio-item">
                 <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
                   <div class="caption">
@@ -27,10 +30,10 @@
                       <i class="fa fa-search-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img src="img/portfolio/MAG9.jpeg" class="img-responsive" alt="{{ post.alt }}">
+                  <img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
                 </a>
               </div>
-              <!--{% endfor %}-->
+              {% endfor %}
             </div>
           </div>
         </section>
