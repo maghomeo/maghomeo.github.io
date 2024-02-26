@@ -3,6 +3,10 @@
 <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog"
   aria-hidden="true">
   <div class="modal-content">
+    <div class="modal-body">
+    <div class="modal-image">
+      <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+    </div>
     <div class="close-modal" data-dismiss="modal">
       <div class="lr">
         <div class="rl">
@@ -12,34 +16,69 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>{{ post.title }}</h2>
-            <hr class="star-primary">
-            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
-            {% if post.description %}
-            <p>{{ post.description }}</p>
-            {% endif %}
-            <ul class="list-inline item-details">
-              {% if post.client %}
-              <li>Client:
-                <strong>{{ post.client }}</strong>
-              </li>
+            <div class="modal-text">
+              <h2>{{ post.title }}</h2>
+              <hr class="star-primary">
+              {% if post.description %}
+              <p>{{ post.description }}</p>
               {% endif %}
-              {% if post.project-date %}
-              <li>Date:
-                <strong>{{ post.project-date }}</strong>
-              </li>
-              {% endif %}
-              {% if post.category %}
-              <li>Service:
-                <strong>{{ post.category }}</strong>
-              </li>
-              {% endif %}
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
-              Close</button>
+              
+                <div class="panel-group" id="accordion-{{ forloop.index }}">
+                  {% if post.client %}       
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion-{{ forloop.index }}" href="#collapseOne{{ forloop.index }}">
+                             Symptoms
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne{{ forloop.index }}" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                         <strong>{{ post.client }}</strong>
+                        </div>
+                      </div>
+                    </div>       
+                  {% endif %}
+                 {% if post.project-date %}          
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion-{{ forloop.index }}" href="#collapseTwo{{ forloop.index }}">
+                            Composition
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo{{ forloop.index }}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        <strong>{{ post.project-date }}</strong>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if post.category %}               
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion-{{ forloop.index }}" href="#collapseThree{{ forloop.index }}">
+                            Dosage
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree{{ forloop.index }}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        <strong>{{ post.category }}</strong>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                </div> 
+              
+            </div>
           </div>
         </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+          Close</button>
       </div>
     </div>
   </div>
