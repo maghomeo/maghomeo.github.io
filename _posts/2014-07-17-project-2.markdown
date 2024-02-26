@@ -1,7 +1,8 @@
 ---
+featured: true
 layout: default
 modal-id: 2
-date: 2023-09-03
+date: 2023-09-01
 img: MAG2.jpeg
 alt: image-alt
 project-date: April 2014
